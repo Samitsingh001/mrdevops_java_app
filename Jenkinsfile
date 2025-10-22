@@ -9,10 +9,11 @@ pipeline {
                     url: 'https://github.com/Samitsingh001/mrdevops_java_app.git'
             }
         }
-        stage('Unit Test maven') {
+
+        stage('Unit Test Maven') {
             steps {
-                script{
-                mvnTest()
+                script {
+                    mvnTest()
                 }
             }
         }
