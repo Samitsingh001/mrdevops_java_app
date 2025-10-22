@@ -7,12 +7,14 @@ pipeline {
         choice(name: 'action', choices: 'create\ndelete', description: 'Choose create/Destroy')
     }
     stages {
-        when{ expression { param.action == 'create' } }
+        
         stage('Git Checkout') {
+            when{ expression { param.action == 'create' } }
             steps {
-                git branch: 'main',
+                gitCheckout(
+                    branch: 'main',
                     url: 'https://github.com/Samitsingh001/mrdevops_java_app.git'
-            }
+          )  }
         }
 
         stage('Unit Test Maven') {
