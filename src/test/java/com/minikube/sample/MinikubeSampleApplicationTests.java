@@ -9,8 +9,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class MinikubeSampleApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+    @Test
+    public void contextLoads() {
+        // This test ensures that the Spring application context loads successfully.
+    }
 
 }
