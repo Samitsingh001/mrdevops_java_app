@@ -13,6 +13,24 @@ pipeline {
         string(name: 'Region', description: "Region of ECR", defaultValue: 'us-west-2')
         string(name: 'ECR_REPO_NAME', description: "Name of the ECR", defaultValue: 'samit_java')
     }
+ environment{
+
+        ACCESS_KEY = credentials('AWS_ACCESS_KEY_ID')
+        SECRET_KEY = credentials('AWS_SECRET_KEY_ID')
+        
+    }
+
+    stages{
+         
+        stage('Git Checkout'){
+                    when { expression {  params.action == 'create' } }
+            steps{
+            gitCheckout(
+                branch: "main",
+                url: "https://github.com/Samitsingh001/mrdevops_java_app.git"
+            )
+            }
+        }
 
    stages {
 
