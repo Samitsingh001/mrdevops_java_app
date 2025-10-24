@@ -24,7 +24,7 @@ pipeline{
         string(
             name: 'ECR_REPO_NAME',
             description: 'ECR Repository Name',
-            defaultValue: 'samit'
+            defaultValue: 'samit_java'
         )
     }
 
